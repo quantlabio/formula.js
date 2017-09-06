@@ -1,11 +1,11 @@
 {
   "author": "Ismael Ghalimi <ismael@stoic.com>",
-  "name": "formulajs",
+  "name": "@quantlab/formulajs",
   "description": "JavaScript implementation of most Microsoft Excel formula functions",
   "version": "1.0.9",
   "repository": {
     "type": "git",
-    "url": "git@github.com:sutoiku/formula.js.git"
+    "url": "git@github.com:lab4quant/formula.js.git"
   },
   "main": "dist/formula.js",
   "bin": {
