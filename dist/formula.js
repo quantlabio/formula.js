@@ -896,6 +896,31 @@ exports.LOG10 = function(number) {
   return Math.log(number) / Math.log(10);
 };
 
+exports.MDETERM = function(matrix) {
+  matrix = utils.parseMatrix(matrix);
+  if (matrix instanceof Error) {
+    return matrix;
+  }
+  return numeric.det(matrix);
+};
+
+exports.MINVERSE = function(matrix) {
+  matrix = utils.parseMatrix(matrix);
+  if (matrix instanceof Error) {
+    return matrix;
+  }
+  return numeric.inv(matrix);
+};
+
+exports.MMULT = function(matrix1, matrix2) {
+  matrix1 = utils.parseMatrix(matrix1);
+  matrix2 = utils.parseMatrix(matrix2);
+  if (utils.anyIsError(matrix1, matrix2)) {
+    return error.value;
+  }
+  return numeric.dot(matrix1, matrix2);
+};
+
 exports.MOD = function(dividend, divisor) {
   dividend = utils.parseNumber(dividend);
   divisor = utils.parseNumber(divisor);
@@ -934,6 +959,14 @@ exports.MULTINOMIAL = function() {
     divisor *= exports.FACT(args[i]);
   }
   return exports.FACT(sum) / divisor;
+};
+
+exports.MUNIT = function(dimension) {
+  dimension = utils.parseNumber(dimension);
+  if (dimension instanceof Error) {
+    return dimension;
+  }
+  return numeric.identity(dimension);
 };
 
 exports.ODD = function(number) {
