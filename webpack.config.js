@@ -11,6 +11,11 @@ module.exports = {
     library: 'formulajs',
     libraryTarget: 'umd'
   },
+  //externals: {
+  //  'numeral': 'numeral',
+  //  'numeric': 'numeric',
+  //  'jStat': 'jStat'
+  //},
   module: {
     noParse: function(content) {
       return /numbro\/languages/.test(content);
